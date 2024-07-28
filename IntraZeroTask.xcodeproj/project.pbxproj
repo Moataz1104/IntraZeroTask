@@ -14,6 +14,7 @@
 		004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 004B88232C56732200790B72 /* IntraZeroTask.xcdatamodeld */; };
 		004B88272C56732300790B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004B88262C56732300790B72 /* Assets.xcassets */; };
 		004B882A2C56732300790B72 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 004B88292C56732300790B72 /* Base */; };
+		22DA03F9CBDCE9CF8A5CA06B /* Pods_IntraZeroTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		004B88262C56732300790B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004B88292C56732300790B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004B882B2C56732300790B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.release.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.release.xcconfig"; sourceTree = "<group>"; };
+		E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.debug.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.debug.xcconfig"; sourceTree = "<group>"; };
+		E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntraZeroTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DA03F9CBDCE9CF8A5CA06B /* Pods_IntraZeroTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				004B88192C56732200790B72 /* IntraZeroTask */,
 				004B88182C56732200790B72 /* Products */,
+				FE3EBB0D982A1AA53E1D493B /* Pods */,
+				F45CF8B0CB1C64D7946B9A76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,23 @@
 			path = IntraZeroTask;
 			sourceTree = "<group>";
 		};
+		F45CF8B0CB1C64D7946B9A76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE3EBB0D982A1AA53E1D493B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */,
+				7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 004B882E2C56732300790B72 /* Build configuration list for PBXNativeTarget "IntraZeroTask" */;
 			buildPhases = (
+				7C275446FEFEFAAEA68C57C5 /* [CP] Check Pods Manifest.lock */,
 				004B88132C56732200790B72 /* Sources */,
 				004B88142C56732200790B72 /* Frameworks */,
 				004B88152C56732200790B72 /* Resources */,
+				BA7BB0DDDFC806807A252BE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C275446FEFEFAAEA68C57C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntraZeroTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA7BB0DDDFC806807A252BE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		004B88132C56732200790B72 /* Sources */ = {
@@ -207,7 +275,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -270,7 +338,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -291,6 +359,7 @@
 		};
 		004B882F2C56732300790B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +387,7 @@
 		};
 		004B88302C56732300790B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
