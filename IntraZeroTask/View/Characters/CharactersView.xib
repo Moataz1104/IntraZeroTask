@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersView" customModule="IntraZeroTask" customModuleProvider="target">
             <connections>
+                <outlet property="placeHolderImage" destination="M4L-h4-RPT" id="Jgi-St-xnU"/>
+                <outlet property="searchTextField" destination="mSY-YW-8LL" id="T58-4e-rgE"/>
+                <outlet property="tableView" destination="ouL-zu-69j" id="fGK-Z2-5Ax"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +21,54 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Character..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mSY-YW-8LL">
+                    <rect key="frame" x="20" y="59" width="353" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="wHo-3H-qbD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-zu-69j">
+                    <rect key="frame" x="0.0" y="129" width="393" height="689"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="errorState" translatesAutoresizingMaskIntoConstraints="NO" id="M4L-h4-RPT">
+                    <rect key="frame" x="46.666666666666657" y="266" width="300" height="320"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="5pp-5Q-yuR"/>
+                        <constraint firstAttribute="height" constant="320" id="dHb-CS-T2J"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="mSY-YW-8LL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KJc-HP-Dxu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ouL-zu-69j" secondAttribute="trailing" id="RcG-vK-DOP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ouL-zu-69j" secondAttribute="bottom" id="Thm-4x-tfd"/>
+                <constraint firstItem="M4L-h4-RPT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bVN-sC-20I"/>
+                <constraint firstItem="mSY-YW-8LL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dgV-lz-Tc2"/>
+                <constraint firstItem="ouL-zu-69j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gQA-no-FwK"/>
+                <constraint firstItem="ouL-zu-69j" firstAttribute="top" secondItem="mSY-YW-8LL" secondAttribute="bottom" constant="20" id="gYp-Hd-Iib"/>
+                <constraint firstItem="M4L-h4-RPT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jE4-Jv-BQb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mSY-YW-8LL" secondAttribute="trailing" constant="20" id="uwE-xM-GYN"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="Mtk-lr-knw" appends="YES" id="1gP-Qc-VR2"/>
+            </connections>
             <point key="canvasLocation" x="138" y="20"/>
         </view>
+        <tapGestureRecognizer id="Mtk-lr-knw">
+            <connections>
+                <action selector="viewTapGesture:" destination="-1" id="9QO-Ew-Mgl"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="errorState" width="400" height="434"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

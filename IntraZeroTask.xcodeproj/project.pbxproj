@@ -17,6 +17,11 @@
 		004B88452C5678EA00790B72 /* StarshipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88432C5678EA00790B72 /* StarshipsView.swift */; };
 		004B88462C5678EA00790B72 /* StarshipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004B88442C5678EA00790B72 /* StarshipsView.xib */; };
 		004B88482C56791100790B72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88472C56791100790B72 /* TabBarView.swift */; };
+		004B884A2C567FE900790B72 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88492C567FE900790B72 /* CharacterModel.swift */; };
+		004B884D2C56807E00790B72 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B884C2C56807E00790B72 /* APIConstants.swift */; };
+		004B884F2C569CC500790B72 /* APICharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B884E2C569CC500790B72 /* APICharacters.swift */; };
+		004B88522C569DFD00790B72 /* HandleErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88512C569DFD00790B72 /* HandleErrors.swift */; };
+		004B88542C569EA900790B72 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88532C569EA900790B72 /* CharacterViewModel.swift */; };
 		22DA03F9CBDCE9CF8A5CA06B /* Pods_IntraZeroTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,11 @@
 		004B88432C5678EA00790B72 /* StarshipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsView.swift; sourceTree = "<group>"; };
 		004B88442C5678EA00790B72 /* StarshipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipsView.xib; sourceTree = "<group>"; };
 		004B88472C56791100790B72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		004B88492C567FE900790B72 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		004B884C2C56807E00790B72 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		004B884E2C569CC500790B72 /* APICharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICharacters.swift; sourceTree = "<group>"; };
+		004B88512C569DFD00790B72 /* HandleErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleErrors.swift; sourceTree = "<group>"; };
+		004B88532C569EA900790B72 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.release.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.release.xcconfig"; sourceTree = "<group>"; };
 		E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.debug.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntraZeroTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +83,8 @@
 			children = (
 				004B88352C56782C00790B72 /* Model */,
 				004B88362C56783600790B72 /* View */,
+				004B884B2C56806400790B72 /* APIServices */,
+				004B88502C569DF200790B72 /* Helpers */,
 				004B88372C56784300790B72 /* Resources */,
 				004B881A2C56732200790B72 /* AppDelegate.swift */,
 				004B881C2C56732200790B72 /* SceneDelegate.swift */,
@@ -85,6 +97,7 @@
 		004B88352C56782C00790B72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				004B88492C567FE900790B72 /* CharacterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +134,7 @@
 			children = (
 				004B883F2C5678DB00790B72 /* CharactersView.swift */,
 				004B88402C5678DB00790B72 /* CharactersView.xib */,
+				004B88532C569EA900790B72 /* CharacterViewModel.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -132,6 +146,23 @@
 				004B88442C5678EA00790B72 /* StarshipsView.xib */,
 			);
 			path = Starships;
+			sourceTree = "<group>";
+		};
+		004B884B2C56806400790B72 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				004B884C2C56807E00790B72 /* APIConstants.swift */,
+				004B884E2C569CC500790B72 /* APICharacters.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		004B88502C569DF200790B72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				004B88512C569DFD00790B72 /* HandleErrors.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F45CF8B0CB1C64D7946B9A76 /* Frameworks */ = {
@@ -267,11 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004B884F2C569CC500790B72 /* APICharacters.swift in Sources */,
 				004B88452C5678EA00790B72 /* StarshipsView.swift in Sources */,
 				004B881B2C56732200790B72 /* AppDelegate.swift in Sources */,
 				004B881D2C56732200790B72 /* SceneDelegate.swift in Sources */,
 				004B88412C5678DB00790B72 /* CharactersView.swift in Sources */,
+				004B884D2C56807E00790B72 /* APIConstants.swift in Sources */,
+				004B88542C569EA900790B72 /* CharacterViewModel.swift in Sources */,
 				004B88482C56791100790B72 /* TabBarView.swift in Sources */,
+				004B884A2C567FE900790B72 /* CharacterModel.swift in Sources */,
+				004B88522C569DFD00790B72 /* HandleErrors.swift in Sources */,
 				004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT6D65325Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntraZeroTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -449,6 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT6D65325Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntraZeroTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
