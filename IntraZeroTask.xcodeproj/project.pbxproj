@@ -25,6 +25,10 @@
 		004B88562C56C79800790B72 /* StarshipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88552C56C79800790B72 /* StarshipsViewModel.swift */; };
 		004B88582C56D33F00790B72 /* APIStarShips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88572C56D33F00790B72 /* APIStarShips.swift */; };
 		004B885A2C56D36700790B72 /* ShipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88592C56D36700790B72 /* ShipModel.swift */; };
+		004B885E2C56D7ED00790B72 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B885C2C56D7ED00790B72 /* DetailView.swift */; };
+		004B885F2C56D7ED00790B72 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004B885D2C56D7ED00790B72 /* DetailView.xib */; };
+		00F43D362C56DDB0006C7F3B /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F43D342C56DDB0006C7F3B /* DetailTableViewCell.swift */; };
+		00F43D372C56DDB0006C7F3B /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F43D352C56DDB0006C7F3B /* DetailTableViewCell.xib */; };
 		22DA03F9CBDCE9CF8A5CA06B /* Pods_IntraZeroTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,10 @@
 		004B88552C56C79800790B72 /* StarshipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsViewModel.swift; sourceTree = "<group>"; };
 		004B88572C56D33F00790B72 /* APIStarShips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStarShips.swift; sourceTree = "<group>"; };
 		004B88592C56D36700790B72 /* ShipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModel.swift; sourceTree = "<group>"; };
+		004B885C2C56D7ED00790B72 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		004B885D2C56D7ED00790B72 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		00F43D342C56DDB0006C7F3B /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		00F43D352C56DDB0006C7F3B /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.release.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.release.xcconfig"; sourceTree = "<group>"; };
 		E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.debug.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntraZeroTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +123,8 @@
 				004B883C2C56789A00790B72 /* TabBar */,
 				004B883D2C5678A100790B72 /* Characters */,
 				004B883E2C5678AF00790B72 /* Starships */,
+				004B885B2C56D7DB00790B72 /* DetailScreen */,
+				00F43D332C56DD91006C7F3B /* CustomViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +182,24 @@
 				004B88512C569DFD00790B72 /* HandleErrors.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		004B885B2C56D7DB00790B72 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				004B885C2C56D7ED00790B72 /* DetailView.swift */,
+				004B885D2C56D7ED00790B72 /* DetailView.xib */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		00F43D332C56DD91006C7F3B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				00F43D342C56DDB0006C7F3B /* DetailTableViewCell.swift */,
+				00F43D352C56DDB0006C7F3B /* DetailTableViewCell.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		F45CF8B0CB1C64D7946B9A76 /* Frameworks */ = {
@@ -255,6 +283,8 @@
 				004B882A2C56732300790B72 /* Base in Resources */,
 				004B88462C5678EA00790B72 /* StarshipsView.xib in Resources */,
 				004B88422C5678DB00790B72 /* CharactersView.xib in Resources */,
+				00F43D372C56DDB0006C7F3B /* DetailTableViewCell.xib in Resources */,
+				004B885F2C56D7ED00790B72 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +347,11 @@
 				004B88412C5678DB00790B72 /* CharactersView.swift in Sources */,
 				004B884D2C56807E00790B72 /* APIConstants.swift in Sources */,
 				004B88542C569EA900790B72 /* CharacterViewModel.swift in Sources */,
+				00F43D362C56DDB0006C7F3B /* DetailTableViewCell.swift in Sources */,
 				004B88482C56791100790B72 /* TabBarView.swift in Sources */,
 				004B884A2C567FE900790B72 /* CharacterModel.swift in Sources */,
 				004B88522C569DFD00790B72 /* HandleErrors.swift in Sources */,
+				004B885E2C56D7ED00790B72 /* DetailView.swift in Sources */,
 				004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

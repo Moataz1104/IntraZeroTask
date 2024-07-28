@@ -25,6 +25,9 @@ class CharacterViewModel{
         fetchCharacters()
         searchForCharacter()
     }
+    deinit{
+        print("6%&%*&^%*&^%*&^%*&^%*&%*^%*&*&^%")
+    }
     
     
     

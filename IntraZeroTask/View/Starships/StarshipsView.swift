@@ -165,7 +165,9 @@ extension StarshipsView:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailView(characterItem:nil , shipItem: viewModel.ships[indexPath.row])
         
+        navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -189,6 +191,7 @@ extension StarshipsView:UIScrollViewDelegate{
         if scrollView.contentOffset.y >= bottomOffset && !hasReachedBottom {
             hasReachedBottom = true
             page += 1
+            viewModel.getAllShipsRelay.accept("\(page)")
         } else if scrollView.contentOffset.y < bottomOffset {
             hasReachedBottom = false
             
