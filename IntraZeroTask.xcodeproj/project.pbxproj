@@ -22,6 +22,9 @@
 		004B884F2C569CC500790B72 /* APICharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B884E2C569CC500790B72 /* APICharacters.swift */; };
 		004B88522C569DFD00790B72 /* HandleErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88512C569DFD00790B72 /* HandleErrors.swift */; };
 		004B88542C569EA900790B72 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88532C569EA900790B72 /* CharacterViewModel.swift */; };
+		004B88562C56C79800790B72 /* StarshipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88552C56C79800790B72 /* StarshipsViewModel.swift */; };
+		004B88582C56D33F00790B72 /* APIStarShips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88572C56D33F00790B72 /* APIStarShips.swift */; };
+		004B885A2C56D36700790B72 /* ShipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88592C56D36700790B72 /* ShipModel.swift */; };
 		22DA03F9CBDCE9CF8A5CA06B /* Pods_IntraZeroTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		004B884E2C569CC500790B72 /* APICharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICharacters.swift; sourceTree = "<group>"; };
 		004B88512C569DFD00790B72 /* HandleErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleErrors.swift; sourceTree = "<group>"; };
 		004B88532C569EA900790B72 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		004B88552C56C79800790B72 /* StarshipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsViewModel.swift; sourceTree = "<group>"; };
+		004B88572C56D33F00790B72 /* APIStarShips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStarShips.swift; sourceTree = "<group>"; };
+		004B88592C56D36700790B72 /* ShipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModel.swift; sourceTree = "<group>"; };
 		7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.release.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.release.xcconfig"; sourceTree = "<group>"; };
 		E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.debug.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntraZeroTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				004B88492C567FE900790B72 /* CharacterModel.swift */,
+				004B88592C56D36700790B72 /* ShipModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 			children = (
 				004B88432C5678EA00790B72 /* StarshipsView.swift */,
 				004B88442C5678EA00790B72 /* StarshipsView.xib */,
+				004B88552C56C79800790B72 /* StarshipsViewModel.swift */,
 			);
 			path = Starships;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			children = (
 				004B884C2C56807E00790B72 /* APIConstants.swift */,
 				004B884E2C569CC500790B72 /* APICharacters.swift */,
+				004B88572C56D33F00790B72 /* APIStarShips.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -299,9 +308,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				004B884F2C569CC500790B72 /* APICharacters.swift in Sources */,
+				004B885A2C56D36700790B72 /* ShipModel.swift in Sources */,
 				004B88452C5678EA00790B72 /* StarshipsView.swift in Sources */,
 				004B881B2C56732200790B72 /* AppDelegate.swift in Sources */,
 				004B881D2C56732200790B72 /* SceneDelegate.swift in Sources */,
+				004B88562C56C79800790B72 /* StarshipsViewModel.swift in Sources */,
+				004B88582C56D33F00790B72 /* APIStarShips.swift in Sources */,
 				004B88412C5678DB00790B72 /* CharactersView.swift in Sources */,
 				004B884D2C56807E00790B72 /* APIConstants.swift in Sources */,
 				004B88542C569EA900790B72 /* CharacterViewModel.swift in Sources */,

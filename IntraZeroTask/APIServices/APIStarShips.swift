@@ -1,5 +1,5 @@
 //
-//  APICharacters.swift
+//  APIStarShips.swift
 //  IntraZeroTask
 //
 //  Created by Moataz Mohamed on 28/07/2024.
@@ -10,15 +10,15 @@ import RxSwift
 import RxCocoa
 import Alamofire
 
-class APICharacters{
-    static let shared = APICharacters()
+class APIStarShips{
+    static let shared = APIStarShips()
     private init(){}
     
     
     
     
-    func fetchAllCharacters(page: String) -> Observable<CharacterModel> {
-        let baseURLString = APIk.getCharsStr
+    func fetchAllShips(page: String) -> Observable<ShipModel> {
+        let baseURLString = APIk.getShipsStr
         
         var components = URLComponents(string: baseURLString)
         components?.queryItems = [URLQueryItem(name: "page", value: page)]
@@ -30,10 +30,10 @@ class APICharacters{
         return Observable.create { observer in
             let request = AF.request(url)
                 .validate(statusCode: 200..<300)
-                .responseDecodable(of: CharacterModel.self) { response in
+                .responseDecodable(of: ShipModel.self) { response in
                     switch response.result {
-                    case .success(let characters):
-                        observer.onNext(characters)
+                    case .success(let ships):
+                        observer.onNext(ships)
                         observer.onCompleted()
                     case .failure(let error):
                         let statusCode = response.response?.statusCode
@@ -53,8 +53,8 @@ class APICharacters{
         }
     }
 
-    func fetchCharactersFromSearch(input: String) -> Observable<CharacterModel> {
-        let baseURLString = APIk.getCharsStr
+    func fetchShipsFromSearch(input: String) -> Observable<ShipModel> {
+        let baseURLString = APIk.getShipsStr
         
         var components = URLComponents(string: baseURLString)
         components?.queryItems = [URLQueryItem(name: "search", value: input)]
@@ -66,10 +66,10 @@ class APICharacters{
         return Observable.create { observer in
             let request = AF.request(url)
                 .validate(statusCode: 200..<300)
-                .responseDecodable(of: CharacterModel.self) { response in
+                .responseDecodable(of: ShipModel.self) { response in
                     switch response.result {
-                    case .success(let characters):
-                        observer.onNext(characters)
+                    case .success(let ships):
+                        observer.onNext(ships)
                         observer.onCompleted()
                     case .failure(let error):
                         let statusCode = response.response?.statusCode

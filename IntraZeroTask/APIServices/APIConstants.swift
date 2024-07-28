@@ -9,6 +9,6 @@ import Foundation
 
 
 struct APIk{
-    static let getAllCharsStr = "https://swapi.dev/api/people"
-    
+    static let getCharsStr = "https://swapi.dev/api/people"
+    static let getShipsStr = "https://swapi.dev/api/starships"
 }

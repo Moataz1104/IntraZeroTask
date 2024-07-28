@@ -61,6 +61,7 @@ class CharactersView: UIViewController {
                 if error != nil {
                     self?.tableView.isHidden = true
                     self?.placeHolderImage.isHidden = false
+                    self?.placeHolderImage.image = UIImage(resource: .errorState)
                     self?.presentErrorAlert(error: error ?? NSError(domain: "", code: 0))
                 } else {
                     self?.tableView.isHidden = false
