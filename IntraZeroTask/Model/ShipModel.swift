@@ -8,6 +8,7 @@
 import Foundation
 
 struct ShipModel:Codable{
+    let next, previous: String?
     let results: [ShipResult]?
 
 }

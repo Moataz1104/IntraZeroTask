@@ -17,15 +17,8 @@ class APICharacters{
     
     
     
-    func fetchAllCharacters(page: String) -> Observable<CharacterModel> {
-        let baseURLString = APIk.getCharsStr
-        
-        var components = URLComponents(string: baseURLString)
-        components?.queryItems = [URLQueryItem(name: "page", value: page)]
-        
-        guard let url = components?.url else {
-            return .error(NetworkingErrors.invalidURL)
-        }
+    func fetchAllCharacters(nextUrl: String) -> Observable<CharacterModel> {
+        let url = URL(string: nextUrl)!
         
         return Observable.create { observer in
             let request = AF.request(url)

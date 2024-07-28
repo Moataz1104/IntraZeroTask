@@ -13,29 +13,31 @@ import RxCocoa
 class CharacterViewModel{
     
     private let disposeBag = DisposeBag()
-    let getAllCharactersRelay = PublishRelay<String>()
+    let getAllCharactersRelay = PublishRelay<Void>()
     let searchTextFieldRelay = PublishRelay<String>()
     let errorPublisher = PublishRelay<Error?>()
     let noDataPublisher = PublishRelay<Bool>()
     
+    var nextUrlStr :String? = APIk.getCharsStr
     var characters = [CharacterResult]()
     var reloadTableClosure:((Bool) ->Void)?
     
+
     init(){
         fetchCharacters()
         searchForCharacter()
     }
-    deinit{
-        print("6%&%*&^%*&^%*&^%*&^%*&%*^%*&*&^%")
-    }
-    
+        
     
     
     private func fetchCharacters(){
         
         getAllCharactersRelay
-            .flatMapLatest { page -> Observable<CharacterModel> in
-                APICharacters.shared.fetchAllCharacters(page: page)
+            .flatMapLatest {[weak self] _ -> Observable<CharacterModel> in
+                guard let nextUrl = self?.nextUrlStr else {
+                    return Observable.empty()
+                }
+                return APICharacters.shared.fetchAllCharacters(nextUrl: nextUrl)
                     .subscribe(on:ConcurrentDispatchQueueScheduler(qos: .background))
                     .observe(on: MainScheduler.instance)
                     .catch {[weak self] error in
@@ -49,6 +51,7 @@ class CharacterViewModel{
                     self?.errorPublisher.accept(nil)
                     self?.characters.append(contentsOf: results)
                 }
+                self?.nextUrlStr = characters.next
                 self?.reloadTableClosure?(false)
             }onError: {[weak self] error in
                 print(error.localizedDescription)

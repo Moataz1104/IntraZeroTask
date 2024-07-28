@@ -17,16 +17,9 @@ class APIStarShips{
     
     
     
-    func fetchAllShips(page: String) -> Observable<ShipModel> {
-        let baseURLString = APIk.getShipsStr
+    func fetchAllShips(nextUrl: String) -> Observable<ShipModel> {
         
-        var components = URLComponents(string: baseURLString)
-        components?.queryItems = [URLQueryItem(name: "page", value: page)]
-        
-        guard let url = components?.url else {
-            return .error(NetworkingErrors.invalidURL)
-        }
-        
+        let url = URL(string: nextUrl)!
         return Observable.create { observer in
             let request = AF.request(url)
                 .validate(statusCode: 200..<300)

@@ -9,6 +9,7 @@ import Foundation
 
 
 struct CharacterModel:Codable{
+    let next, previous: String?
     let results: [CharacterResult]?
 }
 

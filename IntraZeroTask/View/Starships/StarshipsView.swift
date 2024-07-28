@@ -20,7 +20,7 @@ class StarshipsView: UIViewController {
     private let disposeBag = DisposeBag()
     private let cellIdentifier = "ShipCell"
     private var hasReachedBottom = false
-    var page = 1
+    
     
 //    MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class StarshipsView: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getAllShipsRelay.accept(("\(page)"))
+        viewModel.getAllShipsRelay.accept(())
     }
 
 //    MARK: - Actions
@@ -190,8 +190,8 @@ extension StarshipsView:UIScrollViewDelegate{
         
         if scrollView.contentOffset.y >= bottomOffset && !hasReachedBottom {
             hasReachedBottom = true
-            page += 1
-            viewModel.getAllShipsRelay.accept("\(page)")
+            
+            viewModel.getAllShipsRelay.accept(())
         } else if scrollView.contentOffset.y < bottomOffset {
             hasReachedBottom = false
             

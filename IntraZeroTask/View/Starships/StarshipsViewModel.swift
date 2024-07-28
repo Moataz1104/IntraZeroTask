@@ -13,11 +13,12 @@ import RxCocoa
 class StarshipsViewModel{
     
     private let disposeBag = DisposeBag()
-    let getAllShipsRelay = PublishRelay<String>()
+    let getAllShipsRelay = PublishRelay<Void>()
     let searchTextFieldRelay = PublishRelay<String>()
     let errorPublisher = PublishRelay<Error?>()
     let noDataPublisher = PublishRelay<Bool>()
     
+    var nextUrlStr :String? = APIk.getShipsStr
     var ships = [ShipResult]()
     var reloadTableClosure:((Bool) ->Void)?
 
@@ -29,8 +30,12 @@ class StarshipsViewModel{
     private func fetchShips(){
         
         getAllShipsRelay
-            .flatMapLatest { page -> Observable<ShipModel> in
-                APIStarShips.shared.fetchAllShips(page: page)
+            .flatMapLatest { [weak self] _ -> Observable<ShipModel> in
+                guard let nextUrl = self?.nextUrlStr else {
+                    return Observable.empty()
+                }
+                
+                return APIStarShips.shared.fetchAllShips(nextUrl: nextUrl)
                     .subscribe(on:ConcurrentDispatchQueueScheduler(qos: .background))
                     .observe(on: MainScheduler.instance)
                     .catch {[weak self] error in
@@ -44,6 +49,7 @@ class StarshipsViewModel{
                     self?.errorPublisher.accept(nil)
                     self?.ships.append(contentsOf: results)
                 }
+                self?.nextUrlStr = ships.next
                 self?.reloadTableClosure?(false)
             }onError: {[weak self] error in
                 print(error.localizedDescription)

@@ -19,7 +19,6 @@ class CharactersView: UIViewController {
     private let disposeBag = DisposeBag()
     private let cellIdentifier = "CharacterCell"
     private var hasReachedBottom = false
-    var page = 1
     
 //    MARK: ViewController life cycle
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ class CharactersView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getAllCharactersRelay.accept(("\(page)"))
+        viewModel.getAllCharactersRelay.accept(())
     }
     
 //    MARK: Actions
@@ -189,8 +188,7 @@ extension CharactersView:UIScrollViewDelegate{
         
         if scrollView.contentOffset.y >= bottomOffset && !hasReachedBottom {
             hasReachedBottom = true
-            page += 1
-            viewModel.getAllCharactersRelay.accept("\(page)")
+            viewModel.getAllCharactersRelay.accept(())
         } else if scrollView.contentOffset.y < bottomOffset {
             hasReachedBottom = false
             
