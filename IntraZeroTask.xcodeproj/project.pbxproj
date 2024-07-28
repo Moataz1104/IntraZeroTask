@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		004B881B2C56732200790B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B881A2C56732200790B72 /* AppDelegate.swift */; };
 		004B881D2C56732200790B72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B881C2C56732200790B72 /* SceneDelegate.swift */; };
-		004B881F2C56732200790B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B881E2C56732200790B72 /* ViewController.swift */; };
-		004B88222C56732200790B72 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 004B88212C56732200790B72 /* Base */; };
 		004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 004B88232C56732200790B72 /* IntraZeroTask.xcdatamodeld */; };
 		004B88272C56732300790B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004B88262C56732300790B72 /* Assets.xcassets */; };
 		004B882A2C56732300790B72 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 004B88292C56732300790B72 /* Base */; };
+		004B88412C5678DB00790B72 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B883F2C5678DB00790B72 /* CharactersView.swift */; };
+		004B88422C5678DB00790B72 /* CharactersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004B88402C5678DB00790B72 /* CharactersView.xib */; };
+		004B88452C5678EA00790B72 /* StarshipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88432C5678EA00790B72 /* StarshipsView.swift */; };
+		004B88462C5678EA00790B72 /* StarshipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004B88442C5678EA00790B72 /* StarshipsView.xib */; };
+		004B88482C56791100790B72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B88472C56791100790B72 /* TabBarView.swift */; };
 		22DA03F9CBDCE9CF8A5CA06B /* Pods_IntraZeroTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +24,15 @@
 		004B88172C56732200790B72 /* IntraZeroTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntraZeroTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004B881A2C56732200790B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		004B881C2C56732200790B72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		004B881E2C56732200790B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		004B88212C56732200790B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		004B88242C56732200790B72 /* IntraZeroTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IntraZeroTask.xcdatamodel; sourceTree = "<group>"; };
 		004B88262C56732300790B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004B88292C56732300790B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004B882B2C56732300790B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004B883F2C5678DB00790B72 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		004B88402C5678DB00790B72 /* CharactersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersView.xib; sourceTree = "<group>"; };
+		004B88432C5678EA00790B72 /* StarshipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsView.swift; sourceTree = "<group>"; };
+		004B88442C5678EA00790B72 /* StarshipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipsView.xib; sourceTree = "<group>"; };
+		004B88472C56791100790B72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		7CF247D45B7E544A73278D8E /* Pods-IntraZeroTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.release.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.release.xcconfig"; sourceTree = "<group>"; };
 		E252E66B4E89AE62CA506D1D /* Pods-IntraZeroTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntraZeroTask.debug.xcconfig"; path = "Target Support Files/Pods-IntraZeroTask/Pods-IntraZeroTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E73758D61BE04ED8CE50A18C /* Pods_IntraZeroTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntraZeroTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,16 +71,67 @@
 		004B88192C56732200790B72 /* IntraZeroTask */ = {
 			isa = PBXGroup;
 			children = (
+				004B88352C56782C00790B72 /* Model */,
+				004B88362C56783600790B72 /* View */,
+				004B88372C56784300790B72 /* Resources */,
 				004B881A2C56732200790B72 /* AppDelegate.swift */,
 				004B881C2C56732200790B72 /* SceneDelegate.swift */,
-				004B881E2C56732200790B72 /* ViewController.swift */,
-				004B88202C56732200790B72 /* Main.storyboard */,
-				004B88262C56732300790B72 /* Assets.xcassets */,
-				004B88282C56732300790B72 /* LaunchScreen.storyboard */,
 				004B882B2C56732300790B72 /* Info.plist */,
 				004B88232C56732200790B72 /* IntraZeroTask.xcdatamodeld */,
 			);
 			path = IntraZeroTask;
+			sourceTree = "<group>";
+		};
+		004B88352C56782C00790B72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		004B88362C56783600790B72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				004B883C2C56789A00790B72 /* TabBar */,
+				004B883D2C5678A100790B72 /* Characters */,
+				004B883E2C5678AF00790B72 /* Starships */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		004B88372C56784300790B72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				004B88262C56732300790B72 /* Assets.xcassets */,
+				004B88282C56732300790B72 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		004B883C2C56789A00790B72 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				004B88472C56791100790B72 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		004B883D2C5678A100790B72 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				004B883F2C5678DB00790B72 /* CharactersView.swift */,
+				004B88402C5678DB00790B72 /* CharactersView.xib */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		004B883E2C5678AF00790B72 /* Starships */ = {
+			isa = PBXGroup;
+			children = (
+				004B88432C5678EA00790B72 /* StarshipsView.swift */,
+				004B88442C5678EA00790B72 /* StarshipsView.xib */,
+			);
+			path = Starships;
 			sourceTree = "<group>";
 		};
 		F45CF8B0CB1C64D7946B9A76 /* Frameworks */ = {
@@ -156,7 +213,8 @@
 			files = (
 				004B88272C56732300790B72 /* Assets.xcassets in Resources */,
 				004B882A2C56732300790B72 /* Base in Resources */,
-				004B88222C56732200790B72 /* Base in Resources */,
+				004B88462C5678EA00790B72 /* StarshipsView.xib in Resources */,
+				004B88422C5678DB00790B72 /* CharactersView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,9 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004B881F2C56732200790B72 /* ViewController.swift in Sources */,
+				004B88452C5678EA00790B72 /* StarshipsView.swift in Sources */,
 				004B881B2C56732200790B72 /* AppDelegate.swift in Sources */,
 				004B881D2C56732200790B72 /* SceneDelegate.swift in Sources */,
+				004B88412C5678DB00790B72 /* CharactersView.swift in Sources */,
+				004B88482C56791100790B72 /* TabBarView.swift in Sources */,
 				004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,14 +279,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		004B88202C56732200790B72 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				004B88212C56732200790B72 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		004B88282C56732300790B72 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -347,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -369,9 +421,9 @@
 				INFOPLIST_FILE = IntraZeroTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,9 +431,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moataz.IntraZeroTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -397,9 +453,9 @@
 				INFOPLIST_FILE = IntraZeroTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,9 +463,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moataz.IntraZeroTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
