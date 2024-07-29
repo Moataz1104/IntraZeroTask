@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ro-5O-SLG">
-                    <rect key="frame" x="20" y="59.000000000000007" width="25.333333333333329" height="20.333333333333336"/>
+                    <rect key="frame" x="20" y="74" width="25.333333333333329" height="20.333333333333329"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="arrow.left" catalog="system"/>
                     <connections>
@@ -29,13 +29,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsg-go-Lau">
-                    <rect key="frame" x="149.33333333333334" y="59" width="94.666666666666657" height="23"/>
+                    <rect key="frame" x="149.33333333333334" y="74" width="94.666666666666657" height="23"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yD2-Zx-7ft">
-                    <rect key="frame" x="0.0" y="122" width="393" height="696"/>
+                    <rect key="frame" x="0.0" y="137" width="393" height="681"/>
                 </tableView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-0m-D6m">
                     <rect key="frame" x="36.666666666666657" y="276" width="320" height="300"/>
@@ -50,7 +50,7 @@
             <constraints>
                 <constraint firstItem="1Ro-5O-SLG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1YR-mY-nL6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yD2-Zx-7ft" secondAttribute="trailing" id="9WS-XP-NtN"/>
-                <constraint firstItem="Qsg-go-Lau" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="It1-gY-RgC"/>
+                <constraint firstItem="Qsg-go-Lau" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="It1-gY-RgC"/>
                 <constraint firstItem="EkT-0m-D6m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N2Z-TO-fFI"/>
                 <constraint firstItem="EkT-0m-D6m" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Pl2-XF-Smj"/>
                 <constraint firstItem="yD2-Zx-7ft" firstAttribute="top" secondItem="Qsg-go-Lau" secondAttribute="bottom" constant="40" id="Xa9-Al-Gxl"/>

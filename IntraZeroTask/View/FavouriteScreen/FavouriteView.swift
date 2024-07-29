@@ -9,21 +9,20 @@ import UIKit
 import CoreData
 class FavouriteView: UIViewController {
 
-    
+//    MARK: - Attributes
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var placeHolderImage: UIImageView!
     
-    let identfier = "favouriteCell"
+    private let identfier = "favouriteCell"
     let modelContext:NSManagedObjectContext
     
     var viewModel : FavouriteViewModel!
+    
+//    MARK: - View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = FavouriteViewModel(modelContext: modelContext)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identfier)
-        
+            
+        setUpView()
         checkForEmptyState()
         
     }
@@ -36,9 +35,13 @@ class FavouriteView: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    MARK: - Actions
     @IBAction func backButtonAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+//    MARK: - Privates
     private func checkForEmptyState(){
         if let ch = viewModel.characterItems, let sh = viewModel.shipItems{
             if ch.isEmpty && sh.isEmpty{
@@ -52,6 +55,12 @@ class FavouriteView: UIViewController {
         }
     }
     
+    private func setUpView(){
+        viewModel = FavouriteViewModel(modelContext: modelContext)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identfier)
+    }
 }
 
 

@@ -22,7 +22,7 @@ class FavouriteViewModel{
         fetchItems()
     }
     
-    func transformToCharResult(character:CharacterEntity)-> CharacterResult{
+    func transformToCharResult(character:CharacterEntity)-> CharacterResult{ // Transform from character entity to character result to pass the value to the detail screen
        
         return CharacterResult(name: character.name,
                                height: character.birthYear,
@@ -34,7 +34,7 @@ class FavouriteViewModel{
                                gender: character.skinColor)
         
     }
-    func transformToShipResult(ship:StarShipEntity)-> ShipResult{
+    func transformToShipResult(ship:StarShipEntity)-> ShipResult{// Transform from character entity to character result to pass the value to the detail screen
        
         return ShipResult(name: ship.name,
                           model: ship.model,
@@ -56,7 +56,7 @@ class FavouriteViewModel{
     
     
 //    MARK: - Core Data
-    private func fetchItems(){
+    private func fetchItems(){ // Fetch the local items
         do{
             characterItems = try modelContext.fetch(CharacterEntity.fetchRequest())
             shipItems = try modelContext.fetch(StarShipEntity.fetchRequest())

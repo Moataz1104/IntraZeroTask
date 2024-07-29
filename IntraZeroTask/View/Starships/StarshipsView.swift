@@ -63,6 +63,16 @@ class StarshipsView: UIViewController {
 
     }
     
+    @objc func cellTapAction(_ sender: UITapGestureRecognizer) {
+        guard let cell = sender.view as? UITableViewCell,
+              let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+
+        let vc = DetailView(characterItem:nil , shipItem: viewModel.ships[indexPath.row], context: modelContext, isSaveButtonHidden: false)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
     
 //    MARK: - Bind and Subscribe
     private func bindTextField(){
@@ -175,7 +185,10 @@ extension StarshipsView:UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = viewModel.ships[indexPath.row].name
-        
+        let cellTapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapAction(_:)))
+        cell.addGestureRecognizer(cellTapGesture)
+        cell.isUserInteractionEnabled = true
+
         return cell
     }
     
@@ -184,9 +197,6 @@ extension StarshipsView:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailView(characterItem:nil , shipItem: viewModel.ships[indexPath.row], context: modelContext, isSaveButtonHidden: false)
-        
-        navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

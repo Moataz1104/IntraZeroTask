@@ -17,12 +17,12 @@ class DetailView: UIViewController {
     let characterItem:CharacterResult?
     let shipItem:ShipResult?
     let modelContext:NSManagedObjectContext
-    let isSaveButtonHidden:Bool
+    let isSaveButtonHidden:Bool // Check if this view coming from the main tab bar screens or the favourite screen
     
-    var viewModel:DetailViewModel?
+    private var viewModel:DetailViewModel?
     
-    var propertyKeys: [String] = []
-    var propertyValues: [String] = []
+    private var propertyKeys: [String] = [] //Transform the struct to array of keys and values
+    private var propertyValues: [String] = []
     
     //    MARK: - View Controller life cycle
     override func viewDidLoad() {

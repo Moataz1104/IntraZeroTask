@@ -18,7 +18,7 @@ class StarshipsViewModel{
     let errorPublisher = PublishRelay<Error?>()
     let noDataPublisher = PublishRelay<Bool>()
     
-    var nextUrlStr :String? = APIk.getShipsStr
+    private var nextUrlStr :String? = APIk.getShipsStr
     var ships = [ShipResult]()
     var reloadTableClosure:((Bool) ->Void)?
 

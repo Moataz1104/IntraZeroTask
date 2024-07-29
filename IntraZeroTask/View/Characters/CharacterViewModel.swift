@@ -13,12 +13,12 @@ import RxCocoa
 class CharacterViewModel{
     
     private let disposeBag = DisposeBag()
-    let getAllCharactersRelay = PublishRelay<Void>()
-    let searchTextFieldRelay = PublishRelay<String>()
-    let errorPublisher = PublishRelay<Error?>()
-    let noDataPublisher = PublishRelay<Bool>()
+    let getAllCharactersRelay = PublishRelay<Void>() //Fire from the View
+    let searchTextFieldRelay = PublishRelay<String>() //Fire from the View
+    let errorPublisher = PublishRelay<Error?>() //Publish the error to the view
+    let noDataPublisher = PublishRelay<Bool>() 
     
-    var nextUrlStr :String? = APIk.getCharsStr
+    private var nextUrlStr :String? = APIk.getCharsStr
     var characters = [CharacterResult]()
     var reloadTableClosure:((Bool) ->Void)?
     

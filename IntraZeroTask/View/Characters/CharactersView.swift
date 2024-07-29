@@ -22,6 +22,7 @@ class CharactersView: UIViewController {
     private var hasReachedBottom = false
     
     let modelContext:NSManagedObjectContext
+    
 //    MARK: ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,15 +66,24 @@ class CharactersView: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
+    @objc func cellTapAction(_ sender: UITapGestureRecognizer) {
+        guard let cell = sender.view as? UITableViewCell,
+              let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+
+        let vc = DetailView(characterItem: viewModel.characters[indexPath.row], shipItem: nil, context: modelContext, isSaveButtonHidden: false)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
 //    MARK: - Bind and Subscribe
-    private func bindTextField(){
+    private func bindTextField(){  // Bind textField To Viewmodel
         searchTextField.rx.text.orEmpty
             .bind(to: viewModel.searchTextFieldRelay)
             .disposed(by: disposeBag)
     }
     
-    private func subscribeToErrorPublisher() {
+    private func subscribeToErrorPublisher() { // Subscribe to get the errors
         viewModel.errorPublisher
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] error in
@@ -114,7 +124,7 @@ class CharactersView: UIViewController {
         viewModel.reloadTableClosure = {[weak self] isAnimated in
             guard let self = self else{return}
             if isAnimated{
-                DispatchQueue.main.async{
+                DispatchQueue.main.async{ // Animate the reloading
                     let range = NSRange(location: 0, length: self.tableView.numberOfSections)
                     let sections = IndexSet(integersIn: Range(range) ?? 0..<0)
                     self.tableView.reloadSections(sections, with: .fade)
@@ -171,21 +181,22 @@ extension CharactersView:UITableViewDelegate,UITableViewDataSource{
         return viewModel.characters.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = viewModel.characters[indexPath.row].name
-        
+
+        let cellTapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapAction(_:))) // Use tap gesture because of the cell selection bug
+        cell.addGestureRecognizer(cellTapGesture)
+        cell.isUserInteractionEnabled = true
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
-    
+            
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailView(characterItem: viewModel.characters[indexPath.row], shipItem: nil, context: modelContext, isSaveButtonHidden: false)
-        
-        navigationController?.pushViewController(vc, animated: true)
+            
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -203,7 +214,7 @@ extension CharactersView:UITextFieldDelegate{
 
 extension CharactersView:UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        // Use Scroll delegate to get notifi when the user reach the bottom and get new page of items
         let bottomOffset = scrollView.contentSize.height - scrollView.bounds.height
         
         if scrollView.contentOffset.y >= bottomOffset && !hasReachedBottom {
