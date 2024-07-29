@@ -182,8 +182,9 @@ extension CharactersView:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = viewModel.characters[indexPath.row].name
-
+        
         let cellTapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapAction(_:))) // Use tap gesture because of the cell selection bug
         cell.addGestureRecognizer(cellTapGesture)
         cell.isUserInteractionEnabled = true

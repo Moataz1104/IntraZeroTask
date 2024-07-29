@@ -184,6 +184,7 @@ extension StarshipsView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = viewModel.ships[indexPath.row].name
         let cellTapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapAction(_:)))
         cell.addGestureRecognizer(cellTapGesture)
