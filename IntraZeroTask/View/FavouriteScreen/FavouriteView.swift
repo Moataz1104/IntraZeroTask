@@ -110,9 +110,36 @@ extension FavouriteView: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
 
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterResult: CharacterResult?
+        let shipResult: ShipResult?
+
+        if indexPath.section == 0 {
+            if let characterItems = viewModel.characterItems, !characterItems.isEmpty {
+                characterResult = viewModel.transformToCharResult(character: viewModel.characterItems![indexPath.row])
+                shipResult = nil
+            } else if let shipItems = viewModel.shipItems, !shipItems.isEmpty {
+                characterResult = nil
+                shipResult = viewModel.transformToShipResult(ship: viewModel.shipItems![indexPath.row])
+            } else {
+                return
+            }
+        } else if indexPath.section == 1 {
+            characterResult = nil
+            shipResult = viewModel.transformToShipResult(ship: viewModel.shipItems![indexPath.row])
+        } else {
+            return
+        }
+
+        let vc = DetailView(characterItem: characterResult,
+                            shipItem: shipResult,
+                            context: modelContext,
+                            isSaveButtonHidden: true)
+        navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
