@@ -37,10 +37,17 @@ IntraZeroTask is an iOS application developed as part of a technical task for an
 
 # Project Structure
 
-- Model: Contains the data models used in the application
+- Model: Contains the data models used in the application.
 - ViewModel: Contains the logic to bind the model data with the views.
 - View: Contains the UI components and handles user interactions.
 - Networking: Contains the code for making network requests using Alamofire.
+
+# Usage
+- Launch the app and navigate to the Characters or Starships section.
+- Use the search bar to filter results by name.
+- Add items to favorites by tapping the plus icon.
+- View favorites by accessing the bookmark icon.
+
 
 
 
