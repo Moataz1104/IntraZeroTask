@@ -24,17 +24,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8o-6a-gTd">
-                        <rect key="frame" x="70.666666666666686" y="11" width="224" height="87"/>
+                        <rect key="frame" x="60.666666666666671" y="11" width="217.66666666666657" height="87"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="p8o-6a-gTd" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="HqX-86-kzK"/>
+                    <constraint firstItem="p8o-6a-gTd" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.68" id="HqX-86-kzK"/>
                     <constraint firstItem="gdr-40-fyw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Lkq-8v-Y00"/>
                     <constraint firstItem="p8o-6a-gTd" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" id="VnH-52-P7k"/>
-                    <constraint firstItem="p8o-6a-gTd" firstAttribute="leading" secondItem="gdr-40-fyw" secondAttribute="trailing" constant="15" id="aBt-CS-bQO"/>
+                    <constraint firstItem="p8o-6a-gTd" firstAttribute="leading" secondItem="gdr-40-fyw" secondAttribute="trailing" constant="5" id="aBt-CS-bQO"/>
                     <constraint firstItem="gdr-40-fyw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="tZl-vC-goO"/>
                     <constraint firstItem="p8o-6a-gTd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zvO-pa-I1n"/>
                 </constraints>

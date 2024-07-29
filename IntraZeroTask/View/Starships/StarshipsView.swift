@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
+import CoreData
 class StarshipsView: UIViewController {
     
 //    MARK: - Attributes
@@ -21,7 +21,7 @@ class StarshipsView: UIViewController {
     private let cellIdentifier = "ShipCell"
     private var hasReachedBottom = false
     
-    
+    let modelContext:NSManagedObjectContext
 //    MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +39,31 @@ class StarshipsView: UIViewController {
         super.viewWillAppear(animated)
         viewModel.getAllShipsRelay.accept(())
     }
+    
+    
+    init(modelContext: NSManagedObjectContext) {
+        self.modelContext = modelContext
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 
 //    MARK: - Actions
     @IBAction func viewTapGesture(_ sender: Any) {
         view.endEditing(true)
         
     }
+    @IBAction func favButtonAction(_ sender: Any) {
+        let vc = FavouriteView(modelContext: modelContext)
+        
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    
 //    MARK: - Bind and Subscribe
     private func bindTextField(){
         searchTextField.rx.text.orEmpty
@@ -165,7 +184,7 @@ extension StarshipsView:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailView(characterItem:nil , shipItem: viewModel.ships[indexPath.row])
+        let vc = DetailView(characterItem:nil , shipItem: viewModel.ships[indexPath.row], context: modelContext, isSaveButtonHidden: false)
         
         navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)

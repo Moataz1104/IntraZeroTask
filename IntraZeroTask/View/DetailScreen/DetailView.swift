@@ -6,20 +6,25 @@
 //
 
 import UIKit
-
+import CoreData
 class DetailView: UIViewController {
-
-//    MARK: - Attributes
+    
+    //    MARK: - Attributes
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var plusButtonOutlet: UIButton!
     
     let characterItem:CharacterResult?
     let shipItem:ShipResult?
+    let modelContext:NSManagedObjectContext
+    let isSaveButtonHidden:Bool
+    
+    var viewModel:DetailViewModel?
     
     var propertyKeys: [String] = []
     var propertyValues: [String] = []
-
-//    MARK: - View Controller life cycle
+    
+    //    MARK: - View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSetup()
@@ -28,9 +33,11 @@ class DetailView: UIViewController {
         
         
     }
-    init( characterItem: CharacterResult?, shipItem: ShipResult?) {
+    init( characterItem: CharacterResult?, shipItem: ShipResult?,context:NSManagedObjectContext,isSaveButtonHidden:Bool) {
         self.characterItem = characterItem
         self.shipItem = shipItem
+        self.modelContext = context
+        self.isSaveButtonHidden = isSaveButtonHidden
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,20 +46,36 @@ class DetailView: UIViewController {
     }
     
     
-//    MARK: - Actions
+    //    MARK: - Actions
     
     @IBAction func backButtonAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func plusButtonAction(_ sender: Any) {
+        if let character = characterItem{
+            viewModel?.createCharacterEntity(item: character)
+            presentSaveAlert(message: "Character saved To Favourites")
+        }else if let ship = shipItem{
+            viewModel?.createStarShipEntity(item: ship)
+            presentSaveAlert(message: "Star Ship saved To Favourites")
+        }
+        
     }
-//    MARK: - Privates
+    //    MARK: - Privates
     
     private func configureSetup(){
         navigationController?.navigationBar.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         titleLabel.text = characterItem?.name ?? shipItem?.name ?? ""
+        
+        if isSaveButtonHidden{
+            plusButtonOutlet.isHidden = true
+        }else{
+            plusButtonOutlet.isHidden = false
+            self.viewModel = DetailViewModel(modelContext: modelContext)
+        }
+        
     }
     
     private func registerCell(){
@@ -78,13 +101,20 @@ class DetailView: UIViewController {
                     propertyValues.append(value)
                 }
             }
-
+            
         }
         
     }
-
+    
+    private func presentSaveAlert(message:String){
+        let alert = UIAlertController(title: "Done", message: message, preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    
+    
 }
-
 
 extension DetailView:UITableViewDelegate,UITableViewDataSource{
     

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0022B2702C57006E004BDABF /* CharacterEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B26E2C57006E004BDABF /* CharacterEntity+CoreDataClass.swift */; };
+		0022B2712C57006E004BDABF /* CharacterEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B26F2C57006E004BDABF /* CharacterEntity+CoreDataProperties.swift */; };
+		0022B2752C5709F0004BDABF /* FavouriteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0022B2742C5709F0004BDABF /* FavouriteView.xib */; };
+		0022B2762C5709F0004BDABF /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B2732C5709F0004BDABF /* FavouriteView.swift */; };
+		0022B2792C57968B004BDABF /* StarShipEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B2772C57968B004BDABF /* StarShipEntity+CoreDataClass.swift */; };
+		0022B27A2C57968B004BDABF /* StarShipEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B2782C57968B004BDABF /* StarShipEntity+CoreDataProperties.swift */; };
+		0022B27C2C5798AA004BDABF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B27B2C5798AA004BDABF /* DetailViewModel.swift */; };
+		0022B27E2C57AA4C004BDABF /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B27D2C57AA4C004BDABF /* FavouriteViewModel.swift */; };
 		004B881B2C56732200790B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B881A2C56732200790B72 /* AppDelegate.swift */; };
 		004B881D2C56732200790B72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B881C2C56732200790B72 /* SceneDelegate.swift */; };
 		004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 004B88232C56732200790B72 /* IntraZeroTask.xcdatamodeld */; };
@@ -33,6 +41,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0022B26E2C57006E004BDABF /* CharacterEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0022B26F2C57006E004BDABF /* CharacterEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0022B2732C5709F0004BDABF /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
+		0022B2742C5709F0004BDABF /* FavouriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteView.xib; sourceTree = "<group>"; };
+		0022B2772C57968B004BDABF /* StarShipEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarShipEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0022B2782C57968B004BDABF /* StarShipEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarShipEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0022B27B2C5798AA004BDABF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		0022B27D2C57AA4C004BDABF /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
 		004B88172C56732200790B72 /* IntraZeroTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntraZeroTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004B881A2C56732200790B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		004B881C2C56732200790B72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,9 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0022B2722C5709CB004BDABF /* FavouriteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0022B2732C5709F0004BDABF /* FavouriteView.swift */,
+				0022B2742C5709F0004BDABF /* FavouriteView.xib */,
+				0022B27D2C57AA4C004BDABF /* FavouriteViewModel.swift */,
+			);
+			path = FavouriteScreen;
+			sourceTree = "<group>";
+		};
 		004B880E2C56732200790B72 = {
 			isa = PBXGroup;
 			children = (
+				0022B2772C57968B004BDABF /* StarShipEntity+CoreDataClass.swift */,
+				0022B2782C57968B004BDABF /* StarShipEntity+CoreDataProperties.swift */,
+				0022B26E2C57006E004BDABF /* CharacterEntity+CoreDataClass.swift */,
+				0022B26F2C57006E004BDABF /* CharacterEntity+CoreDataProperties.swift */,
 				004B88192C56732200790B72 /* IntraZeroTask */,
 				004B88182C56732200790B72 /* Products */,
 				FE3EBB0D982A1AA53E1D493B /* Pods */,
@@ -124,6 +154,7 @@
 				004B883D2C5678A100790B72 /* Characters */,
 				004B883E2C5678AF00790B72 /* Starships */,
 				004B885B2C56D7DB00790B72 /* DetailScreen */,
+				0022B2722C5709CB004BDABF /* FavouriteScreen */,
 				00F43D332C56DD91006C7F3B /* CustomViews */,
 			);
 			path = View;
@@ -189,6 +220,7 @@
 			children = (
 				004B885C2C56D7ED00790B72 /* DetailView.swift */,
 				004B885D2C56D7ED00790B72 /* DetailView.xib */,
+				0022B27B2C5798AA004BDABF /* DetailViewModel.swift */,
 			);
 			path = DetailScreen;
 			sourceTree = "<group>";
@@ -284,6 +316,7 @@
 				004B88462C5678EA00790B72 /* StarshipsView.xib in Resources */,
 				004B88422C5678DB00790B72 /* CharactersView.xib in Resources */,
 				00F43D372C56DDB0006C7F3B /* DetailTableViewCell.xib in Resources */,
+				0022B2752C5709F0004BDABF /* FavouriteView.xib in Resources */,
 				004B885F2C56D7ED00790B72 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0022B2792C57968B004BDABF /* StarShipEntity+CoreDataClass.swift in Sources */,
+				0022B27A2C57968B004BDABF /* StarShipEntity+CoreDataProperties.swift in Sources */,
 				004B884F2C569CC500790B72 /* APICharacters.swift in Sources */,
 				004B885A2C56D36700790B72 /* ShipModel.swift in Sources */,
 				004B88452C5678EA00790B72 /* StarshipsView.swift in Sources */,
@@ -344,13 +379,18 @@
 				004B881D2C56732200790B72 /* SceneDelegate.swift in Sources */,
 				004B88562C56C79800790B72 /* StarshipsViewModel.swift in Sources */,
 				004B88582C56D33F00790B72 /* APIStarShips.swift in Sources */,
+				0022B27C2C5798AA004BDABF /* DetailViewModel.swift in Sources */,
 				004B88412C5678DB00790B72 /* CharactersView.swift in Sources */,
+				0022B2762C5709F0004BDABF /* FavouriteView.swift in Sources */,
 				004B884D2C56807E00790B72 /* APIConstants.swift in Sources */,
 				004B88542C569EA900790B72 /* CharacterViewModel.swift in Sources */,
 				00F43D362C56DDB0006C7F3B /* DetailTableViewCell.swift in Sources */,
 				004B88482C56791100790B72 /* TabBarView.swift in Sources */,
 				004B884A2C567FE900790B72 /* CharacterModel.swift in Sources */,
+				0022B2702C57006E004BDABF /* CharacterEntity+CoreDataClass.swift in Sources */,
+				0022B2712C57006E004BDABF /* CharacterEntity+CoreDataProperties.swift in Sources */,
 				004B88522C569DFD00790B72 /* HandleErrors.swift in Sources */,
+				0022B27E2C57AA4C004BDABF /* FavouriteViewModel.swift in Sources */,
 				004B885E2C56D7ED00790B72 /* DetailView.swift in Sources */,
 				004B88252C56732200790B72 /* IntraZeroTask.xcdatamodeld in Sources */,
 			);

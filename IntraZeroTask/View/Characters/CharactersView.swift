@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import CoreData
 class CharactersView: UIViewController {
 
 //    MARK: - Attributes
@@ -20,6 +21,7 @@ class CharactersView: UIViewController {
     private let cellIdentifier = "CharacterCell"
     private var hasReachedBottom = false
     
+    let modelContext:NSManagedObjectContext
 //    MARK: ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +42,29 @@ class CharactersView: UIViewController {
         viewModel.getAllCharactersRelay.accept(())
     }
     
+    
+    init(modelContext: NSManagedObjectContext) {
+        self.modelContext = modelContext
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
 //    MARK: Actions
     
     @IBAction func viewTapGesture(_ sender: Any) {
         view.endEditing(true)
     }
+    
+    @IBAction func favButtonAction(_ sender: Any) {
+        let vc = FavouriteView(modelContext: modelContext)
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 //    MARK: - Bind and Subscribe
     private func bindTextField(){
@@ -163,7 +183,7 @@ extension CharactersView:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailView(characterItem: viewModel.characters[indexPath.row], shipItem: nil)
+        let vc = DetailView(characterItem: viewModel.characters[indexPath.row], shipItem: nil, context: modelContext, isSaveButtonHidden: false)
         
         navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
