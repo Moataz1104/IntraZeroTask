@@ -25,7 +25,7 @@ IntraZeroTask is an iOS application developed as part of a technical task for an
    pod install
    open IntraZeroTask.xcworkspace
 
-#Technologies Used
+# Technologies Used
 - Swift
 - UIKit (xib files)
 - RxSwift
@@ -35,7 +35,7 @@ IntraZeroTask is an iOS application developed as part of a technical task for an
 - CocoaPods
 
 
-#Project Structure
+# Project Structure
 
 - Model: Contains the data models used in the application
 - ViewModel: Contains the logic to bind the model data with the views.
